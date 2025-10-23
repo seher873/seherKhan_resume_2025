@@ -1,0 +1,353 @@
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Calibri', 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+/* Optimize for print */
+@page {
+    size: A4;
+    margin: 0;
+}
+
+/* Resume container */
+.resume-container {
+    max-width: 210mm; /* A4 width */
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    min-height: 297mm; /* A4 height */
+    padding: 15mm; /* Standard printer margin */
+    position: relative;
+}
+
+/* Print button */
+.print-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.print-button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.print-button:active {
+    transform: translateY(0);
+}
+
+/* Header styles */
+.resume-header {
+    background: linear-gradient(135deg, #e6f0ff 0%, #d6e4ff 100%);
+    padding: 30px;
+    border-bottom: 2px solid #b3d1ff;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.profile-picture {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    background-color: #d6e4ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #3498db;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+.profile-picture:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.personal-info h1 {
+    font-size: 36px;
+    color: #2c3e50;
+    margin-bottom: 5px;
+    letter-spacing: -0.5px;
+    transition: color 0.3s ease;
+}
+
+.personal-info h1:hover {
+    color: #3498db;
+}
+
+.personal-info h2 {
+    font-size: 22px;
+    color: #3498db;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.location {
+    font-size: 18px;
+    color: #7f8c8d;
+}
+
+/* Content layout */
+.resume-content {
+    display: flex;
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.left-column {
+    flex: 1;
+    background-color: #f8fafc;
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 4px solid #3498db;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.right-column {
+    flex: 2;
+    padding: 0 20px;
+}
+
+/* Section styles */
+section {
+    margin-bottom: 25px;
+    animation: fadeIn 0.5s ease forwards;
+    opacity: 0;
+}
+
+section:nth-child(1) { animation-delay: 0.1s; }
+section:nth-child(2) { animation-delay: 0.2s; }
+section:nth-child(3) { animation-delay: 0.3s; }
+section:nth-child(4) { animation-delay: 0.4s; }
+section:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h3 {
+    color: #2c3e50;
+    font-size: 20px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #b3d1ff;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    position: relative;
+}
+
+h3:after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: #3498db;
+}
+
+/* Contact section */
+.contact-section ul {
+    list-style: none;
+}
+
+.contact-section li {
+    margin-bottom: 12px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.label {
+    font-weight: 600;
+    color: #34495e;
+    min-width: 110px;
+    display: inline-block;
+}
+
+.contact-section a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.contact-section a:hover {
+    text-decoration: underline;
+}
+
+/* Skills section */
+.skills-section ul, .soft-skills-section ul {
+    list-style: none;
+}
+
+.skills-section li, .soft-skills-section li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #d6e4ff;
+    position: relative;
+    padding-left: 15px;
+    transition: all 0.2s ease;
+}
+
+.skills-section li:hover, .soft-skills-section li:hover {
+    background-color: rgba(52, 152, 219, 0.05);
+    padding-left: 20px;
+}
+
+.skills-section li:before, .soft-skills-section li:before {
+    content: "►";
+    color: #3498db;
+    position: absolute;
+    left: 0;
+    top: 8px;
+    font-size: 10px;
+    transition: all 0.2s ease;
+}
+
+.skills-section li:hover:before, .soft-skills-section li:hover:before {
+    color: #2c3e50;
+    left: 5px;
+}
+
+.skills-section li:last-child, .soft-skills-section li:last-child {
+    border-bottom: none;
+}
+
+/* Experience section */
+.job, .education, .project {
+    margin-bottom: 25px;
+}
+
+.job h4, .education h4, .project h4 {
+    color: #2c3e50;
+    font-size: 17px;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.company, .institution, .tech {
+    color: #3498db;
+    font-style: italic;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.job ul {
+    padding-left: 20px;
+}
+
+.job li {
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.job li:before {
+    content: "•";
+    color: #3498db;
+    position: absolute;
+    left: -15px;
+    top: 0;
+}
+
+/* Print styles */
+@media print {
+    body {
+        background-color: white;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .resume-container {
+        box-shadow: none;
+        margin: 0;
+        padding: 15mm; /* Maintain consistent padding */
+        max-width: 100%;
+        min-height: auto;
+    }
+    
+    a {
+        color: #3498db;
+        text-decoration: none;
+    }
+    
+    .resume-header {
+        margin-bottom: 15px;
+        break-inside: avoid;
+    }
+    
+    .resume-content {
+        padding: 0;
+    }
+    
+    .left-column, .right-column {
+        box-shadow: none;
+    }
+    
+    /* Hide print button when printing */
+    .print-button {
+        display: none;
+    }
+    
+    /* Ensure sections stay together */
+    section {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+    
+    /* Adjust spacing for print */
+    .job, .education, .project {
+        page-break-inside: avoid;
+    }
+    
+    h3 {
+        page-break-after: avoid;
+    }
+}
+
+/* Additional print styles */
+@page {
+    margin: 0;
+    size: A4;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    .resume-content {
+        flex-direction: column;
+    }
+    
+    .left-column {
+        margin-bottom: 20px;
+    }
+}
